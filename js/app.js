@@ -24,8 +24,8 @@ $(document).ready(function(){
 
   	// generate random number
 
-  	function generateRandom() {
-  		return Math.floor(Math.random() * 100) + 1;
+  	function generateNumber() {
+  		var number = Math.floor(Math.random() * 100) + 1;
   	}
 
   	// retrieve user's guess
@@ -49,7 +49,7 @@ $(document).ready(function(){
 	}
 
 	if (difference >= 1 && difference <= 10) {
-		$("#feedback").text("Hotter");
+		$("#feedback").text("On fire!");
 	} else if (difference < 10 && difference <= 25){
 		$("#feedback").text("Hot");
 	} else if (difference < 25 && difference <= 35){
@@ -78,8 +78,6 @@ $(document).ready(function(){
    	function resetVar() {
    		count = 0;
    	}
-
-  
 
 });
 
