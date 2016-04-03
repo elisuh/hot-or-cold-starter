@@ -34,7 +34,7 @@ $(document).ready(function(){
   		var guess = document.getElementById("userGuess").elements[0].value;
   	}
 
-  	// validate user's guess
+  	// validate user's guess and return hot or cold
 
   	function checkGuess(guess) {
   		var guess = parseFloat(guess);
@@ -72,9 +72,6 @@ $(document).ready(function(){
   		$('#count').text(count);
   	}
 
-  	// if..else statement that returns hot or cold
-
-  	// winner
    
    	// reset game
 
