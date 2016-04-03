@@ -67,8 +67,9 @@ $(document).ready(function(){
 
   	// count number of guesses
 
-  	function counter() {
+  	function countGuesses() {
   		count++;
+  		$('#count').text(count);
   	}
 
   	// if..else statement that returns hot or cold
