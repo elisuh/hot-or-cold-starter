@@ -48,9 +48,9 @@ $(document).ready(function(){
 
 	}
 
-	if (difference >= 1 && difference <= 10) {
+	if (difference >= 1 && difference <= 15) {
 		$("#feedback").text("On fire!");
-	} else if (difference < 10 && difference <= 25){
+	} else if (difference < 15 && difference <= 25){
 		$("#feedback").text("Hot");
 	} else if (difference < 25 && difference <= 35){
 		$("#feedback").text("Warm");
@@ -75,9 +75,9 @@ $(document).ready(function(){
    
    	// reset game
 
-   	function resetVar() {
-   		count = 0;
-   	}
+   	$(".new").on('click', function(){
+ 		location.reload(true);
+ 	});
 
 });
 
