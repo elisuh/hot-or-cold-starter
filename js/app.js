@@ -1,32 +1,3 @@
-
-$(document).ready(function(){
-	
-	/*--- Display information modal box ---*/
-  	$(".what").click(function(){
-    	$(".overlay").fadeIn(1000);
-
-  	});
-
-  	/*--- Hide information modal box ---*/
-  	$("a.close").click(function(){
-  		$(".overlay").fadeOut(1000);
-  	});
-
-  	'use strict';
-  	//define variables
-
-
-  	// start new game
-  
- 	$("#guessButton").click(function() {
-  		var guess = $("#userGuess").val();
-  		var listGuess = '<li>' + guess + '</li>';
-  		$('#guessList').append(listGuess);
-  		$('#userGuess').val('');
-  		countGuess();
-  		checkGuess(guess);
-  	});
-
   	// generate random number
 
   	function generateNumber() {
@@ -52,6 +23,7 @@ $(document).ready(function(){
 		difference = number - guess;
 
 	}
+}
 
 	if (difference >= 1 && difference <= 15) {
 		$("#feedback").text("On fire!");
@@ -64,11 +36,7 @@ $(document).ready(function(){
 	} else ( difference > 65){
 		$("#feedback").text("Freezing");
 	}
-
-
-};
-
-  	}
+}
 
   	// count number of guesses
 
@@ -76,6 +44,37 @@ $(document).ready(function(){
   		count++;
   		$('#count').text(count);
   	}
+
+
+
+$(document).ready(function(){
+	
+	/*--- Display information modal box ---*/
+  	$(".what").click(function(){
+    	$(".overlay").fadeIn(1000);
+
+  	});
+
+  	/*--- Hide information modal box ---*/
+  	$("a.close").click(function(){
+  		$(".overlay").fadeOut(1000);
+  	});
+
+  	'use strict';
+  	//define variables
+
+
+  	// start new game
+  
+ 	$("#guessButton").click(function() {
+  		var guess = $("#userGuess").val();
+  		var listGuess = '<li>' + guess + '</li>';
+  		$('#guessList').append(listGuess);
+  		$('#userGuess').val('');
+  		generateNumber();
+  		countGuess();
+  		checkGuess(guess);
+  	});
 
    
    	// reset game
