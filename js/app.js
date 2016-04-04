@@ -17,10 +17,15 @@ $(document).ready(function(){
 
 
   	// start new game
-
-  	function newGame() {
-  		//code 
-  	}
+  
+ 	$("#guessButton").click(function() {
+  		var guess = $("#userGuess").val();
+  		var listGuess = '<li>' + guess + '</li>';
+  		$('#guessList').append(listGuess);
+  		$('#userGuess').val('');
+  		countGuess();
+  		checkGuess(guess);
+  	});
 
   	// generate random number
 
@@ -50,13 +55,13 @@ $(document).ready(function(){
 
 	if (difference >= 1 && difference <= 15) {
 		$("#feedback").text("On fire!");
-	} else if (difference < 15 && difference <= 25){
+	} else if (difference < 15 && difference <= 30){
 		$("#feedback").text("Hot");
-	} else if (difference < 25 && difference <= 35){
+	} else if (difference < 30 && difference <= 45){
 		$("#feedback").text("Warm");
-	} else if (difference < 35 && difference <= 50){
+	} else if (difference < 50 && difference <= 65){
 		$("#feedback").text("Cold");
-	} else ( difference > 50){
+	} else ( difference > 65){
 		$("#feedback").text("Freezing");
 	}
 
@@ -67,7 +72,7 @@ $(document).ready(function(){
 
   	// count number of guesses
 
-  	function countGuesses() {
+  	function countGuess() {
   		count++;
   		$('#count').text(count);
   	}
