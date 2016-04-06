@@ -1,7 +1,7 @@
   	// generate random number
 
   	function generateNumber() {
-  		var number = Math.floor(Math.random() * 100) + 1;
+  		return Math.floor(Math.random() * 100) + 1;
   	}
 
   	// retrieve user's guess
@@ -10,9 +10,9 @@
   	//	var guess = document.getElementById("userGuess").elements[0].value;
   //	}
 
-  	// validate user's guess and return hot or cold
+  	
 
-function checkGuess(guess) {
+function checkGuess(guess) { // validate user's guess and return hot or cold
   		var guess = parseFloat(guess); // convert gess from string to number
   		var differece;
       	var number;
@@ -65,7 +65,7 @@ $(document).ready(function(){
   
  	$("#guessButton").click(function() { //when guess button is clicked do these things
   		var guess = $("#userGuess").val(); // define variable and guess user enters
-      	var number = generateNumber(); //  can you define a variable as a function???
+      	number = generateNumber(); //  can you define a variable as a function???
   		var listGuess = '<li>' + guess + '</li>'; // listGuess is user's guess with some list tags
   		$('#guessList').append(listGuess); // add user's guess to the list
   		$('#userGuess').val(''); // empty user guess field so they can add a new guess
