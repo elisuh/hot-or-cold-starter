@@ -25,16 +25,16 @@ function checkGuess(guess) {
   }
   if (difference >= 1 && difference <= 5){
 		$("#feedback").text("On fire!"); // if calculated difference is 1-5 away from guess, you're close
-  } else if (difference >= 6 && difference <= 15){
-		$("#feedback").text("Hotter!"); // if calculated guess is 
-	} else if (difference > 15 && difference <= 30){
-		$("#feedback").text("Hot");
-	} else if (difference > 31 && difference <= 45){
-		$("#feedback").text("Warm");
-	} else if (difference > 46 && difference <= 65){
-		$("#feedback").text("Cold");
+  } else if (difference > 5 && difference <= 15){
+		$("#feedback").text("Hotter!"); // if diff btwn 6 and 15, hotter
+	} else if (difference > 15 && difference <= 30){ 
+		$("#feedback").text("Hot"); // if between 15 and 30, hot
+	} else if (difference > 30 && difference <= 45){
+		$("#feedback").text("Warm"); // if between 30 and 45, warm
+	} else if (difference > 45 && difference <= 65){
+		$("#feedback").text("Cold"); // if between 45 and 65, cold
 	} else if ( difference > 65){
-		$("#feedback").text("Freezing");
+		$("#feedback").text("Freezing"); // if difference is over 65, freezing
 	}
 }
 
