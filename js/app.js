@@ -13,25 +13,25 @@
   	// validate user's guess and return hot or cold
 
 function checkGuess(guess) {
-  		var guess = parseFloat(guess);
+  		var guess = parseFloat(guess); // convert gess from string to number
   		var differece;
-      var number;
+      	var number;
   if (guess == number){
-		$("#feedback").text("You win!");
+		$("#feedback").text("You win!"); // if guess is the same as random number, you win!
 	} else if (guess > number) {
-		difference = guess - number;
+		difference = guess - number; // calculate difference if guess is great than number
 	} else if (guess < number) {
-		difference = number - guess;
+		difference = number - guess; // calculate different if guess is less than number
   }
   if (difference >= 1 && difference <= 5){
-		$("#feedback").text("On fire!");
-  } else if (difference >= 1 && difference <= 15){
-		$("#feedback").text("Hotter!");
-	} else if (difference < 15 && difference <= 30){
+		$("#feedback").text("On fire!"); // if calculated difference is 1-5 away from guess, you're close
+  } else if (difference >= 6 && difference <= 15){
+		$("#feedback").text("Hotter!"); // if calculated guess is 
+	} else if (difference > 15 && difference <= 30){
 		$("#feedback").text("Hot");
-	} else if (difference < 30 && difference <= 45){
+	} else if (difference > 31 && difference <= 45){
 		$("#feedback").text("Warm");
-	} else if (difference < 50 && difference <= 65){
+	} else if (difference > 46 && difference <= 65){
 		$("#feedback").text("Cold");
 	} else if ( difference > 65){
 		$("#feedback").text("Freezing");
