@@ -41,8 +41,9 @@ function checkGuess(guess) {
   	// count number of guesses
 
   	function countGuess() {
-  		count++;
-  		$('#count').text(count); // increase count by 1 and add text to #count id
+  		var count; // define count variable
+  		count++; // increse count by 1
+  		$('#count').text(count); // and add text to #count id
   	}
 
 
