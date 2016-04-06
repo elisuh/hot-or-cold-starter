@@ -42,7 +42,7 @@ function checkGuess(guess) {
 
   	function countGuess() {
   		count++;
-  		$('#count').text(count);
+  		$('#count').text(count); // increase count by 1 and add text to #count id
   	}
 
 
@@ -62,23 +62,23 @@ $(document).ready(function(){
 
   	// start new game
   
- 	$("#guessButton").click(function() {
-  		var guess = $("#userGuess").val();
-      var number = generateNumber();
-  		var listGuess = '<li>' + guess + '</li>';
-  		$('#guessList').append(listGuess);
-  		$('#userGuess').val('');
-  		countGuess();
-  		checkGuess(guess);
+ 	$("#guessButton").click(function() { //when guess button is clicked do these things
+  		var guess = $("#userGuess").val(); // define variable and guess user enters
+      	var number = generateNumber(); //  can you define a variable as a function???
+  		var listGuess = '<li>' + guess + '</li>'; // listGuess is user's guess with some list tags
+  		$('#guessList').append(listGuess); // add user's guess to the list
+  		$('#userGuess').val(''); // empty user guess field so they can add a new guess
+  		countGuess(); // run countguess function
+  		checkGuess(guess); // pass user's guess through checkguess function
   	});
 
    
    	// reset game
 
-   	$(".new").on('click', function(){
- 		location.reload(true);
- 		numberOfGuesses = 0;
-    guesses = [];
+   	$(".new").on('click', function(){ // when new game button is clicked do the following
+ 		location.reload(true); // reload page
+ 		$('#guessList').append(''); // empty listguess field
+    	generateNumber(); //generate a new random number
  	});
 
 });
