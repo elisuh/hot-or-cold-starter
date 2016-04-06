@@ -21,9 +21,7 @@
 		difference = guess - number;
 	} else (guess < number) {
 		difference = number - guess;
-
 	}
-}
 
 	if (difference >= 1 && difference <= 15) {
 		$("#feedback").text("On fire!");
@@ -60,10 +58,6 @@ $(document).ready(function(){
   		$(".overlay").fadeOut(1000);
   	});
 
-  	'use strict';
-  	//define variables
-
-
   	// start new game
   
  	$("#guessButton").click(function() {
@@ -79,8 +73,13 @@ $(document).ready(function(){
    
    	// reset game
 
-   	$(".new").on('click', function(){
+   	$(".new").on('click', function(e){
+   		e.preventDefault();
  		location.reload(true);
+ 		count = 0
+        guesses = [];
+        number = Math.floor(Math.random() * 100) + 1;
+        $('#userGuess').val('');
  	});
 
 });
