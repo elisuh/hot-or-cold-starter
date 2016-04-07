@@ -8,12 +8,13 @@ function generateNumber() {
 
 // returning user's guess
 function getGuess() {
-	return document.getElementById('userGuess').value;
+	var guess = parseInt($("#userGuess"));
+	return guess;
 }
 
 // validate user's guess and return hot or cold
 function checkGuess() {
-  var guess = parseFloat(getGuess()); // convert guess from string to number
+  var guess = getGuess(); // convert guess from string to number
   var difference = 0;
   
   console.log(guess);
