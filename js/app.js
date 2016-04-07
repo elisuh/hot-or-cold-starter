@@ -8,13 +8,12 @@ function generateNumber() {
 
 // returning user's guess
 function getGuess() {
-	var guess = parseInt($("#userGuess"));
-	return guess;
+	return document.getElementById('userGuess').value;
 }
 
 // validate user's guess and return hot or cold
 function checkGuess() {
-  var guess = getGuess(); // convert guess from string to number
+  var guess = getGuess(); 
   var difference = 0;
   
   console.log(guess);
@@ -27,7 +26,6 @@ function checkGuess() {
     difference = number - guess; // calculate different if guess is less than number
   }
   
-  // console.log(guess);
   console.log(difference);
   
   if (difference >= 1 && difference <= 5) {
@@ -48,7 +46,7 @@ function checkGuess() {
 // count number of guesses
 function countGuess() {
   count++; // increse count by 1
-  $('#count').text(count); // and add text to #count id
+  $('#count').text(count); // add text to #count id
 }
 
 
@@ -92,7 +90,6 @@ $(document).ready(function() {
     // Feedback needs to equal Guess
     $('#feedback').innerHTML = "Make your Guess!";
     // Generate New Random Number
-    // var number = generateNumber();
     number = generateNumber(); //generate a new random number
   });
 
