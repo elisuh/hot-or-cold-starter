@@ -13,7 +13,7 @@ function getGuess() {
 
 // validate user's guess and return hot or cold
 function checkGuess() {
-  var guess = getGuess(); // convert guess from string to number
+  var guess = parseFloat(getGuess()); // convert guess from string to number
   var difference = 0;
   
   console.log(guess);
