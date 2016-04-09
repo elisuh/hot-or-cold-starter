@@ -8,7 +8,7 @@ function generateNumber() {
 
 // returning user's guess
 function getGuess() {
-	return document.getElementById('userGuess').value;
+    return parseInt($('#userGuess').val());
 }
 
 // validate user's guess and return hot or cold
@@ -18,7 +18,7 @@ function checkGuess() {
   
   console.log(guess);
   
-  if (guess === number) {
+  if (guess == number) {
     return $("#feedback").text("You win!"); // if guess is the same as random number, you win!
   } else if (guess > number) {
     difference = guess - number; // calculate difference if guess is great than number
@@ -70,10 +70,13 @@ $(document).ready(function() {
     var guess = getGuess(); // define variable and guess user enters
     // var number = generateNumber(); //  can you define a variable as a function???
     var listGuess = '<li>' + guess + '</li>'; // listGuess is user's guess with some list tags
-    $('#guessList').append(listGuess); // add user's guess to the list
-    $('#userGuess').val(''); // empty user guess field so they can add a new guess
+    if (isNaN(guess)) { // check for NaN
+    $("#feedback").text("That is not a number!"); // if NaN, alert user
+  }
+    else { $('#guessList').append(listGuess); } // add user's guess to the list
     countGuess(); // run countguess function
     checkGuess(); // pass user's guess through checkguess function
+    $('#userGuess').val('');// empty user guess field so they can add a new guess
   });
 
 
@@ -82,6 +85,8 @@ $(document).ready(function() {
   $(".new").on('click', function(e) {// when new game button is clicked do the following
     e.preventDefault();
     // Empty Guesses
+    location.reload(true);
+    //reload page
     $('#guessList').innerHTML = ""; // empty listguess field
     // Reset Guess number on page
     $('#count').text = "0";
@@ -94,4 +99,3 @@ $(document).ready(function() {
   });
 
 });
-
