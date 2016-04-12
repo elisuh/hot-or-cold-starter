@@ -82,9 +82,7 @@ $(document).ready(function() {
 
   // reset game
 
-  $(".new").on('click', function(e) {// when new game button is clicked do the following
-    e.preventDefault();
-    // Empty Guesses
+  $(".new").on('click', function() {// when new game button is clicked do the following
     location.reload(true);
     //reload page
     $('#guessList').innerHTML = ""; // empty listguess field
